@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 
-const ToDoForm = ({ addTodo }) => {
-  const [value, setValue] = useState("");
+import { ToDoFormInterface } from "../interface";
 
-  const handleSubmit = (e) => {
+const ToDoForm: React.FC<ToDoFormInterface> = ({ addTodo }) => {
+  const [value, setValue] = useState<string>("");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     addTodo(value.trim());
@@ -11,7 +13,7 @@ const ToDoForm = ({ addTodo }) => {
     setValue("");
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 

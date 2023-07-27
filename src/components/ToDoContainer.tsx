@@ -11,7 +11,7 @@ const ToDoContainer = () => {
   const [todos, setTodos] = useState([]);
 
   // Function to add a new todo
-  const addTodo = (todo) => {
+  const addTodo = (todo: string) => {
     const newTask = {
       id: uuidv4(), // Generate a unique ID for each todo
       task: todo,
