@@ -6,7 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+p {
+ color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.0rem;
 
+}
 body {
   background: #8758ff;
   display: flex;
@@ -24,7 +29,7 @@ h1 {
   font-size: 1.75rem;
 }
 
-.TodoWrapper {
+.TodoContainer {
   background: #1A1A40;
   margin-top: 5rem;
   padding: 2rem;
