@@ -15,7 +15,7 @@ export interface ToDoPropsInterface{
 
 export interface ToDoFormInterface {
     addTodo: (todo: string) => void;
-    handleSearchAlert: (todo: string) => void;
+    handleAddTodoCharAlert: (todo: string) => void;
 }
 
 export interface EditToDoFormInterface {

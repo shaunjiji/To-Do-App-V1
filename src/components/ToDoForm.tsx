@@ -2,21 +2,18 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 
 import { ToDoFormInterface } from "../interface";
 
-const ToDoForm: React.FC<ToDoFormInterface> = ({ addTodo, handleSearchAlert  }) => {
+const ToDoForm: React.FC<ToDoFormInterface> = ({ addTodo, handleAddTodoCharAlert  }) => {
   const [value, setValue] = useState<string>("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     addTodo(value.trim());
-
     setValue("");
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
-    handleSearchAlert(e.target.value); 
-
+    handleAddTodoCharAlert(e.target.value); 
   };
 
   return (
