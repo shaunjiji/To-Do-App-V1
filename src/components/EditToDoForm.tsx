@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
+import { EditToDoFormInterface } from "../interface";
 
-const EditToDoForm = ({ updateTodo, todo }) => {
-  const [value, setValue] = useState(todo.task);
 
-  const handleSubmit = (e) => {
+const EditToDoForm: React.FC<EditToDoFormInterface>= ({ updateTodo, todo }) => {
+  const [value, setValue] = useState<string>(todo.task);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     updateTodo(value, todo.id);
@@ -11,20 +13,20 @@ const EditToDoForm = ({ updateTodo, todo }) => {
     setValue("");
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   return (
-    <form className="TodoForm" onSubmit={handleSubmit}>
+    <form className="to-do-form" onSubmit={handleSubmit}>
       <input
         type="text"
-        className="todo-input"
+        className="to-do-input"
         placeholder="Update Task"
         value={value}
         onChange={handleChange}
       />
-      <button type="submit" className="todo-btn">
+      <button type="submit" className="to-do-btn">
         Update Task
       </button>
     </form>

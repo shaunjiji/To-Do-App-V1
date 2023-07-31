@@ -8,26 +8,28 @@ import {
   faSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ToDo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
+import { ToDoPropsInterface } from "../interface";
+
+const ToDo: React.FC<ToDoPropsInterface> = ({ todo, toggleComplete, deleteTodo, editTodo }) => {
   const handleToggleComplete = () => {
-    toggleComplete(task.id);
+    toggleComplete(todo.id);
   };
 
   const handleEdit = () => {
-    editTodo(task.id);
+    editTodo(todo.id);
   };
 
   const handleDelete = () => {
-    deleteTodo(task.id);
+    deleteTodo(todo.id);
   };
 
   const handleChecked = () => {
-    toggleComplete(task.id);
+    toggleComplete(todo.id);
   };
   return (
-    <div className="Todo">
+    <div className="to-do">
       <div>
-        {task.completed ? (
+        {todo.completed ? (
           <FontAwesomeIcon icon={faSquareCheck} onClick={handleChecked} />
         ) : (
           <FontAwesomeIcon icon={faSquare} onClick={handleChecked} />
@@ -35,9 +37,9 @@ const ToDo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
       </div>
       <p
         onClick={handleToggleComplete}
-        className={`${task.completed ? "completed" : ""}`}
+        className={`${todo.completed ? "completed" : ""}`}
       >
-        {task.task}
+        {todo.task}
       </p>
       <div>
         <FontAwesomeIcon icon={faPenToSquare} onClick={handleEdit} />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Open+Sans:wght@300&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -9,11 +9,11 @@
 p {
  color: #fff;
   margin-bottom: 0.5rem;
-  font-size: 1.0rem;
+  font-size: 0.7rem;
 
 }
 body {
-  background: #8758ff;
+  background: cyan;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,18 +29,35 @@ h1 {
   font-size: 1.75rem;
 }
 
-.TodoContainer {
+.to-do-container {
   background: #1A1A40;
   margin-top: 5rem;
   padding: 2rem;
   border-radius: 5px;
 }
 
-.TodoForm {
+.to-do-form {
   width: 100%;
 }
 
-.todo-input {
+@media (max-width: 440px) {
+  .to-do-input{
+    width: 100%;
+  }
+  .to-do-form {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 0.65rem;
+    padding-top: 0.25rem;
+  }
+}
+
+.to-do-input {
   outline: none;
   background: none;
   border: 1px solid #8758ff;
@@ -51,20 +68,25 @@ h1 {
   color: #fff;
 }
 
-.todo-input::placeholder {
+.to-do-input::placeholder {
   color: #ffffff4d;
 }
 
-.todo-btn {
+.to-do-btn {
   background: #8758ff;
   color: #fff;
   border: none;
   padding: 0.55rem;
   cursor: pointer;
-  
 }
 
-.Todo {
+.to-do-btn:hover {
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan,
+  0 0 100px cyan, 0 0 200px cyan
+}
+
+.to-do {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,9 +98,28 @@ h1 {
   cursor: pointer;
 }
 
+.alert{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
 .fa-trash {
   margin-left: 0.75rem;
 }
+
+.fa-trash:hover {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.fa-pen-to-square:hover {
+ 
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
 
 .completed {
   color: #c5aeff;
