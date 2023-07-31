@@ -7,9 +7,7 @@ const EditToDoForm: React.FC<EditToDoFormInterface>= ({ updateTodo, todo }) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     updateTodo(value, todo.id);
-
     setValue("");
   };
 

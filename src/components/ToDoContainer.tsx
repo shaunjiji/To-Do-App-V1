@@ -10,8 +10,6 @@ import { ToDoInterface } from "../interface";
 
 import { v4 as uuidv4 } from "uuid";
 
-
-
 const ToDoContainer = () => {
   // State to manage the list of todos
   const [todos, setTodos] = useState<ToDoInterface[]>([]);
